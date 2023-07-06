@@ -24,6 +24,7 @@ class StoreRequest extends FormRequest
         return [
             'title' => 'required|string',
             'images' => 'nullable|array',
+            'content' => 'nullable|string',
         ];
     }
 }

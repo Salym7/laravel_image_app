@@ -36,8 +36,9 @@
                         <h4>{{ post.title }}</h4>
                         <div v-for="image in post.images" class="mb-3">
                             <img :src="image.preview_url" class="mb-3" />
-                            <!-- <img :src="image.url" alt="" /> -->
+                            <img :src="image.url" alt="" />
                         </div>
+                        <div class="ql-editor" v-html="post.content"></div>
                     </div>
                 </div>
             </div>
@@ -75,6 +76,7 @@ export default {
                 this.dropzone.removeFile(file)
             })
             data.append("title", this.title)
+            data.append("content", this.content)
             this.title = ""
             axios.post("/api/posts", data).then(this.getPost())
         },
@@ -105,3 +107,11 @@ export default {
     },
 }
 </script>
+<style>
+.dz-success-mark {
+    display: none;
+}
+.dz-error-mark {
+    display: none;
+}
+</style>
