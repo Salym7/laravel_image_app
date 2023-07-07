@@ -113,7 +113,9 @@ export default {
 .dz-error-mark {
     display: none;
 }
-.ql-editor img,
+.ql-editor img {
+    width: 100%;
+}
 .post .image {
     width: 100%;
 }
